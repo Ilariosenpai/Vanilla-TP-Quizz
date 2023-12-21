@@ -1,7 +1,6 @@
 <?php
 include_once('./partials/header-index.php');
 // require_once('../database.connect.php');
-// $request = $database->query("SELECT * FROM user");
 
 // $pseudos = $request->fetchAll();
 // var_dump($pseudos);
@@ -9,13 +8,22 @@ include_once('./partials/header-index.php');
 // $request = $database->query("SELECT * FROM message");
 
 // $messages = $request->fetchAll();
-?>
-if (
-    isset($_POST["user"]) && !empty($_POST["user"]) &&
-    isset($_POST["message"]) && !empty($_POST["message"])
+$request = $database->query("SELECT * FROM user");
 
-  
+if ( isset($_POST["name"]) && !empty($_POST["name"]) 
+        
+    
+
+    
+    
     ) {
-       
-    }else echo 'veullez remplir le formulaire';
-  
+        
+    }else
+    $request=$database->prepare("SELECT * FROM `user` (pseudo) VALUES (:pseudo)");
+
+    $request->execute([
+    'pseudo' =>$_POST["name"]
+
+    ]);
+    var_dump('pseudo');
+        ?>

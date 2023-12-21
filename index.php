@@ -7,20 +7,24 @@ include_once('./partials/header-index.php');
 
 
 ?>
+<section>
+
 
   <div class="d-flex justify-content-center">
 
   <form action="../procces/traitementIndex.php" method="post">
 
-  <div class="mb-3 d-flex align-item-center">
+  <div class="container-md form col4  d-flex align-item-center">
+    <img src="./img/quizz.png" alt="">
     <label for="exampleInputEmail1" class="form-label">Pseudo</label>
-    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+    <input type="text" class="form-control" id="pseudo" name="name">
     
+    
+    <button type="submit" href="./page2.php" class="btn btn-primary">Go</button>
   </div>
-
-  <button type="submit" href="./page2.php" class="btn btn-primary">Go</button>
 </form>
 </div>
+</section>
 </main>
 
 <?php
