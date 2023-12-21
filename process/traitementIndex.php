@@ -1,5 +1,5 @@
 <?php
-// include_once('../partials/header-index.php');
+include_once('./partials/header-index.php');
 // require_once('../database.connect.php');
 // $request = $database->query("SELECT * FROM user");
 
