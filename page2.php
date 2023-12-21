@@ -14,20 +14,20 @@
 
 
 
-<form action="" method="post">
+<form action="./traitement-page2.php" method="post">
 
 <div class="m-5 d-flex justify-content-center">
-    <input type="password" class="form-control" placeholder="Insérer vôtre pseudo :" id="">
+    <input type="password" class="form-control" placeholder="Insérer vôtre pseudo :" name="name">
 </div>
 
 <div class="m-5 d-flex justify-content-center" >
     
-  <button type="submit" class="btn btn-danger">Commencer le quiz</button>
+  <button type="submit" class="btn btn-danger" name="start">Commencer le quiz</button>
 
 </div>
   
 <div class="m-5 d-flex justify-content-center">
-  <button type="submit" class="btn btn-danger">Classement</button>
+  <button type="submit" class="btn btn-danger" name="ranking">Classement</button>
 </div>
 
 </form>
