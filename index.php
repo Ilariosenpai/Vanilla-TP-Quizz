@@ -1,5 +1,5 @@
 <?php
-include_once('./partials/headerNone.php');
+include_once('./partials/header-index.php');
 
 // require_once('../database.connect.php');
 
@@ -8,7 +8,7 @@ include_once('./partials/headerNone.php');
 
 ?>
 
-  <div class="d-flex justify-content-center ">
+  <div class="d-flex justify-content-center">
 
   <form action="../procces/traitementIndex.php" method="post">
 
@@ -18,7 +18,7 @@ include_once('./partials/headerNone.php');
     
   </div>
 
-  <button type="submit" class="btn btn-primary">Go</button>
+  <button type="submit" href="./page2.php" class="btn btn-primary">Go</button>
 </form>
 </div>
 </main>
