@@ -1,21 +1,19 @@
 <?php
-include_once('./partials/header-index.php');
-// require_once('../database.connect.php');
 
-// $pseudos = $request->fetchAll();
-// var_dump($pseudos);
-
-// $request = $database->query("SELECT * FROM message");
-
-// $messages = $request->fetchAll();
+require_once('../bdd/connexion.php');
 
 if (isset($_POST['name']) && !empty($_POST['name'])) {
     $request = $database->prepare("SELECT * FROM user WHERE pseudo =:pseudo");
     $request->execute([':pseudo' => $_POST['name']]);
-    $resultat = $request->fetchAll(PDO::FETCH_ASSOC);
-    if (count($resultat) > 0) {
-        echo "le pseudo existe dans la base de données";
-    }else{
-        
+    $resultat = $request->fetch(PDO::FETCH_ASSOC);
+    
+
+
+    if ($resultat === false) {
+        echo "le pseudo n'éxiste pas dans la base de données";
+        header("Location: ../page2.php");
+
+    }else{ echo " le pseudo éxiste";
+        header("Location: ../page3.php");
     }
 }

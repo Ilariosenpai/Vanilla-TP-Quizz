@@ -8,7 +8,9 @@
     <title>Salameche-page2</title>
 </head>
 
-<?php include_once('./partials/header.php') ?>
+<?php
+
+ include_once('./partials/header.php') ?>
 
 <body>
 
