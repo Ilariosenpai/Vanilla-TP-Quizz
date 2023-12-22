@@ -1,7 +1,3 @@
-<?php
-require_once('./index.php');
-// require_once('./database.connect.php');
-?>
 <!DOCTYPE html>
 <html lang="en">
 
