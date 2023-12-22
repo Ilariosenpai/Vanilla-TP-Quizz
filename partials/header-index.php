@@ -1,5 +1,6 @@
 <?php
 require_once('./index.php');
+// require_once('../database.connect.php');
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -17,6 +18,9 @@ require_once('./index.php');
     <nav class="navbar navbar-dark bg-danger">
       <div class="container-fluid">
         <a class="navbar-brand" href="#">Quizz</a>
+
+
+
       </div>
 
       </div>
