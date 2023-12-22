@@ -1,7 +1,7 @@
 
 
-<footer class="bg-danger">
-<div class="d-flex justify-content-around ">
+<footer class="bg-danger fixed-bottom" id="footer">
+<div class="d-flex justify-content-around">
 <h2>Ilan</h2>
 <h2>Turan</h2>
 <h2>Alexis</h2>

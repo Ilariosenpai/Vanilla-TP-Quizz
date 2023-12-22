@@ -8,22 +8,14 @@ include_once('./partials/header-index.php');
 // $request = $database->query("SELECT * FROM message");
 
 // $messages = $request->fetchAll();
-$request = $database->query("SELECT * FROM user");
 
-if ( isset($_POST["name"]) && !empty($_POST["name"]) 
+if (isset($_POST['name']) && !empty($_POST['name'])) {
+    $request = $database->prepare("SELECT * FROM user WHERE pseudo =:pseudo");
+    $request->execute([':pseudo' => $_POST['name']]);
+    $resultat = $request->fetchAll(PDO::FETCH_ASSOC);
+    if (count($resultat) > 0) {
+        echo "le pseudo existe dans la base de données";
+    }else{
         
-    
-
-    
-    
-    ) {
-        
-    }else
-    $request=$database->prepare("SELECT * FROM `user` (pseudo) VALUES (:pseudo)");
-
-    $request->execute([
-    'pseudo' =>$_POST["name"]
-
-    ]);
-    var_dump('pseudo');
-        ?>
+    }
+}

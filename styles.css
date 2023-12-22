@@ -3,9 +3,9 @@ body{
     height: 100%;
     position: relative;
     background-image: url(./img/quizz.png);
-    background-size: cover
-    ;
+    background-size: cover;
 }
+
 .form{
-    
+    margin-top: 200%;
 }
