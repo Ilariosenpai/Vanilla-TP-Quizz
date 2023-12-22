@@ -1,34 +1,34 @@
 <?php
-require_once('./bdd/connextion.php');
+require_once('./bdd/connexion.php');
 
 
 
 if (isset($_POST['name']) && !empty($_POST['name'])) {
 
-
-    $request = $database->prepare("SELECT * FROM `user` WHERE pseudo =:pseudo");
+    $request = $database->prepare("SELECT * FROM `user` WHERE `pseudo` =:pseudo");
     $request->execute([
         ':pseudo' => $_POST['name']
     ]);
-    // $pseudo = $requete->fetchall(PDO::FETCH_ASSOC);
+    $resultat = $request->fetchAll(PDO::FETCH_ASSOC);
 
-    if ($_POST['name'] === $pseudo) { 
-    echo " euhh ma tata a une couille";
-    }
+    if (count($resultat)>0) {
+       
+         echo "le pseudo existe dans la base de données";
 
-    if ($pseudo) {
+    } else {
 
-        $request = $database->prepare("INSERT INTO `user` (pseudo) VALUES (:pseudo)");
-        $request->execute([
-            'pseudo' => $_POST["name"]
+    $score = 0;
+    $requests = $database->prepare("INSERT INTO `user` (pseudo,score) VALUES (:pseudo,:score)");
+    $requests->execute([
+    ':pseudo' => $_POST['name'],
+    ':score' => $score  
+    ]);                          
+  
 
-        ]);
-    }
+    $lastId = $database->lastInsertId();
+    } 
+   
 
-
-} else {
-
-    echo 'nous sommes en guerre';
-
-}
-
+}header('Location: ./page3.php')
+?>
+ 
